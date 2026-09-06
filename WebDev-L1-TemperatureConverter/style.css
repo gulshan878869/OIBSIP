@@ -1,0 +1,318 @@
+/* ==========================================================
+   Project: Interactive Temperature Converter
+   Track: Web Development & Designing (OASIS INFOBYTE SIP)
+   Level 1 - Task 3: Temperature Converter Website
+   Tech Stack: HTML5, CSS3, Vanilla JavaScript
+   ========================================================== */
+
+/* --- CSS Reset & Global Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- App Container & Centred Layout --- */
+.app-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+}
+
+.converter-card {
+  width: 100%;
+  max-width: 540px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
+  padding: 2.5rem 2.25rem;
+  margin: 0 auto;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-badge {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #0284c7;
+  background-color: #e0f2fe;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+.converter-card h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.converter-card p.subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+/* --- Form Controls --- */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.temp-input {
+  flex: 1.4;
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: 1.05rem;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.temp-input:focus {
+  border-color: #0284c7;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.temp-input.input-error-state {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.unit-select {
+  flex: 1;
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.unit-select:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* --- Action Buttons --- */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.btn-convert {
+  flex: 1;
+  height: 3rem;
+  background-color: #0284c7;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-convert:hover {
+  background-color: #0369a1;
+}
+
+.btn-convert:active {
+  transform: scale(0.99);
+}
+
+.btn-reset {
+  height: 3rem;
+  padding: 0 1.25rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+/* --- Error Notification Banner --- */
+.error-box {
+  display: none;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.error-box.active {
+  display: block;
+}
+
+/* --- Result Display Area --- */
+.results-container {
+  display: none;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.results-container.active {
+  display: block;
+}
+
+.results-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.result-box {
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.result-box.highlight {
+  border-color: #bae6fd;
+  background-color: #f0f9ff;
+}
+
+.result-unit-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.35rem;
+}
+
+.result-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.result-formula-note {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.35rem;
+}
+
+/* --- Informational Footer Card --- */
+.reference-card {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed #cbd5e1;
+  font-size: 0.825rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.reference-card strong {
+  color: #334155;
+}
+
+/* --- Page Footer --- */
+.app-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.85rem;
+}
+
+.app-footer strong {
+  color: #ffffff;
+}
+
+/* --- Responsive Adjustments --- */
+@media screen and (max-width: 540px) {
+  .converter-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .temp-input, .unit-select {
+    width: 100%;
+    flex: none;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .converter-card h1 {
+    font-size: 1.55rem;
+  }
+}

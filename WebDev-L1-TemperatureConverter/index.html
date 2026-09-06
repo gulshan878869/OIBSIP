@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter — OASIS INFOBYTE SIP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app-wrapper">
+    <div class="converter-card">
+      
+      <!-- Card Header -->
+      <header class="card-header">
+        <span class="app-badge">OASIS INFOBYTE SIP &bull; Level 1 Task 3</span>
+        <h1>Temperature Converter</h1>
+        <p class="subtitle">Convert temperatures between Celsius, Fahrenheit, and Kelvin with absolute-zero precision.</p>
+      </header>
+
+      <!-- Input Group -->
+      <section class="input-group">
+        <label for="tempInput" class="input-label">Enter Temperature &amp; Select Scale:</label>
+        <div class="input-row">
+          <input 
+            type="number" 
+            id="tempInput" 
+            class="temp-input" 
+            placeholder="e.g. 25 or -40" 
+            step="any"
+            autocomplete="off"
+            required
+          >
+          <select id="unitSelect" class="unit-select" aria-label="Select Temperature Unit">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Error Notification Banner -->
+      <div id="errorBox" class="error-box" role="alert" aria-live="polite"></div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="convertBtn" class="btn-convert" type="button">Convert Temperature</button>
+        <button id="resetBtn" class="btn-reset" type="button">Reset</button>
+      </div>
+
+      <!-- Results Display Area -->
+      <section id="resultsContainer" class="results-container" aria-live="polite">
+        <h2 class="results-heading">Converted Outputs:</h2>
+        <div class="results-grid">
+          
+          <div id="resultBox1" class="result-box highlight">
+            <div id="unitLabel1" class="result-unit-label">Fahrenheit (°F)</div>
+            <div id="valueDisplay1" class="result-value">77°</div>
+            <div id="formulaNote1" class="result-formula-note">(25 × 9/5) + 32</div>
+          </div>
+
+          <div id="resultBox2" class="result-box">
+            <div id="unitLabel2" class="result-unit-label">Kelvin (K)</div>
+            <div id="valueDisplay2" class="result-value">298.15 K</div>
+            <div id="formulaNote2" class="result-formula-note">25 + 273.15</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Reference Note -->
+      <footer class="reference-card">
+        <strong>Absolute Zero Limits:</strong> −273.15 °C &bull; −459.67 °F &bull; 0 K.<br>
+        Values below absolute zero represent physically non-existent thermal states and are flagged.
+      </footer>
+
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Submitted for <strong>OASIS INFOBYTE SIP</strong> &mdash; Web Development &amp; Designing Track (Level 1 &bull; Task 3)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

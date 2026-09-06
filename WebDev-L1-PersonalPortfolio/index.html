@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Morgan — Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Smooth-Scroll Navigation Bar -->
+  <header class="portfolio-nav" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="portfolio-logo">
+        Alex<span>Portfolio</span>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="nav-contact-btn">Get In Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Profile / Hero Section -->
+  <section class="hero-profile-section" id="hero">
+    <div class="container hero-profile-grid">
+      <div class="hero-profile-details">
+        <span class="role-badge">Frontend Web Developer &amp; UI Designer</span>
+        <h1>Alex Morgan</h1>
+        <p class="hero-intro">
+          Passionate frontend developer crafting accessible, responsive, and performance-driven web interfaces using modern web technologies and clean architecture.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-secondary">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-avatar-wrap">
+        <div class="avatar-placeholder" aria-label="Professional Profile Avatar Placeholder">
+          <div class="avatar-icon">&#128100;</div>
+          <div class="avatar-caption">Profile Photo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section (2-3 Sentences describing background & interests) -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2>Background &amp; Passion</h2>
+      </div>
+      <div class="about-card">
+        <p class="about-text">
+          I am a dedicated web developer with a strong foundation in semantic HTML5, modern CSS3 layouts, and responsive interface architecture.
+        </p>
+        <p class="about-text">
+          My primary focus is translating design concepts into pixel-perfect, accessible, and fast-loading web applications that provide seamless user experiences across all devices.
+        </p>
+        <p class="about-text">
+          Outside of development, I actively study UI/UX design systems, participate in open-source contributions, and continuously explore emerging web standards.
+        </p>
+        <div class="about-meta-grid">
+          <div class="about-meta-item">
+            <h4>Location</h4>
+            <p>San Francisco, CA</p>
+          </div>
+          <div class="about-meta-item">
+            <h4>Focus</h4>
+            <p>Frontend Development</p>
+          </div>
+          <div class="about-meta-item">
+            <h4>Availability</h4>
+            <p>Open for Internships</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section (Visual Grid of Technical Skills) -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Competencies</span>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">&#127760;</div>
+          <h3>HTML5 &amp; Semantics</h3>
+          <p>Semantic markup, ARIA roles, document structure, and accessibility compliance.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">&#127912;</div>
+          <h3>CSS3 &amp; Responsive Design</h3>
+          <p>Flexbox, CSS Grid, media queries, CSS custom properties, and fluid typography.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">&#9889;</div>
+          <h3>JavaScript Fundamentals</h3>
+          <p>DOM manipulation, event delegation, ES6+ syntax, and asynchronous patterns.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">&#128241;</div>
+          <h3>Mobile-First Layouts</h3>
+          <p>Viewport optimization, touch-friendly UI design, and responsive breakpoint tuning.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">&#128736;</div>
+          <h3>Version Control &amp; Git</h3>
+          <p>GitHub repository management, branching, committing, and collaborative workflows.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">&#9881;</div>
+          <h3>Web Standards &amp; SEO</h3>
+          <p>Clean code architecture, cross-browser compatibility, and meta tag optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (At least 2 Project Cards with Title, Description, GitHub placeholder) -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Work</span>
+        <h2>Recent Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">HTML5 &bull; CSS3</span>
+            <h3>Apex Digital Landing Page</h3>
+            <p>
+              A high-converting, fully responsive corporate landing page engineered with CSS Grid and Flexbox. Features a sticky navigation bar, distinct content sections, custom typography, and zero external runtime dependencies.
+            </p>
+          </div>
+          <a href="https://github.com/example/OIBSIP/tree/main/WebDev-L1-LandingPage" target="_blank" rel="noopener noreferrer" class="github-link">
+            <span>&#128279; View on GitHub</span>
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div>
+            <span class="project-tag">HTML5 &bull; CSS3 &bull; JavaScript</span>
+            <h3>Interactive Temperature Converter</h3>
+            <p>
+              A precision temperature calculation tool that converts values seamlessly between Celsius, Fahrenheit, and Kelvin. Implements strict numeric input validation, multi-unit simultaneous output, and absolute zero boundary handling.
+            </p>
+          </div>
+          <a href="https://github.com/example/OIBSIP/tree/main/WebDev-L1-TemperatureConverter" target="_blank" rel="noopener noreferrer" class="github-link">
+            <span>&#128279; View on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Name, Email, Social Icons) -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Contact Information</h2>
+      </div>
+      <div class="contact-card">
+        <h3>Let's Collaborate</h3>
+        <p>I am always open to discussing new opportunities, web projects, or engineering internships.</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Name</div>
+            <p class="contact-val">Alex Morgan</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <p class="contact-val">
+              <a href="mailto:alex.morgan@example.com">alex.morgan@example.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="social-handles">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">&#128188; LinkedIn Profile</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">&#128187; GitHub Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer">
+    <div class="container">
+      <p>&copy; 2026 <strong>Alex Morgan</strong>. All rights reserved.</p>
+      <p>Submitted for <strong>OASIS INFOBYTE SIP</strong> &mdash; Web Development &amp; Designing Track (Level 1 &bull; Task 2)</p>
+    </div>
+  </footer>
+
+</body>
+</html>
